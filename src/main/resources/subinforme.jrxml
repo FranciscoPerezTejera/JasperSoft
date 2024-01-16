@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subinforme" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="735cd5c1-3755-4e2d-86be-fe3418a9fb18">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT "CREADOR"."CREADOR", GROUP_CONCAT("JUEGOS"."JUEGO") AS "JUEGO"
+FROM "CREADOR"
+INNER JOIN "JUEGOS" ON "JUEGOS"."ID_CREADOR" = "CREADOR"."IDC"
+GROUP BY "CREADOR"."CREADOR";]]>
+	</queryString>
+	<field name="CREADOR" class="java.lang.String"/>
+	<field name="JUEGO" class="java.lang.String"/>
+	<title>
+		<band height="63">
+			<staticText>
+				<reportElement x="0" y="0" width="530" height="60" uuid="210c784d-5c01-4fb0-839f-b3fc035c534a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APARTADO 2 .- Crea un subinforme en el  que muestres un listado de los juegos de cada creador]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="68">
+			<staticText>
+				<reportElement x="0" y="10" width="130" height="50" uuid="27a238dd-e0a1-4bc4-a473-603d9155026a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Comic Sans MS" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CREADORAS DE VIDEOJUEGOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="10" width="350" height="50" uuid="76d9c3f7-e117-43b3-8dfa-a91e516a060b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Comic Sans MS" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VIDEOJUEGOS]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="30">
+			<textField>
+				<reportElement x="10" y="5" width="131" height="20" uuid="3d55f39d-6db3-406e-9a34-f85176c53358"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+					<paragraph>
+						<tabStop position="200" alignment="Left"/>
+					</paragraph>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CREADOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="5" width="414" height="20" uuid="ec0520f2-fbf0-4014-9fdb-678e44859fe4"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{JUEGO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

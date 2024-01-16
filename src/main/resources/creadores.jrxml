@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CreadoresReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f5eebc63-8ebe-45dd-bb57-b67a83616599">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<queryString>
+		<![CDATA[SELECT PAIS, COUNT(*) AS CANTIDAD, GROUP_CONCAT(CREADOR) AS LISTA_CREADORES FROM CREADOR GROUP BY PAIS]]>
+	</queryString>
+	<field name="PAIS" class="java.lang.String"/>
+	<field name="CANTIDAD" class="java.lang.Long"/>
+	<field name="LISTA_CREADORES" class="java.lang.String"/>
+	<variable name="CANTIDAD1" class="java.lang.Long" resetType="Page" calculation="Average">
+		<variableExpression><![CDATA[$F{CANTIDAD}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="122">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="60" uuid="a1f3626c-b0d2-4ec3-bc21-9d55293ced22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Comic Sans MS" size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UT04 Tarea 1: Generación de Informes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="62" width="550" height="54" uuid="dbdbb357-a0cc-4dcb-8223-7745dc9a1d14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APARTADO 1.- Genera un informe para mostrar todos los creadores de juego que están en la BD agrupados por país]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="24"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="50">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<staticText>
+				<reportElement x="-20" y="0" width="185" height="50" uuid="3a01ede4-dce4-4a15-a215-e64409d4f952"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Comic Sans MS" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAISES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="165" y="0" width="185" height="50" uuid="687d6412-29a7-418b-94f0-82a6d1010de9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Comic Sans MS" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CANTIDAD CREADORES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="357" y="0" width="185" height="50" uuid="941cde25-9799-48c2-ae9f-6e5a48ae738d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Comic Sans MS" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE DE CREADORES]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50">
+			<textField>
+				<reportElement x="30" y="0" width="100" height="50" uuid="e41a22a7-0bf0-4d06-8af3-34a82e1d5cf0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PAIS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="0" width="100" height="50" uuid="e41a22a7-0bf0-4d06-8af3-34a82e1d5cf0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CANTIDAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="363" y="0" width="172" height="50" uuid="e41a22a7-0bf0-4d06-8af3-34a82e1d5cf0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{LISTA_CREADORES}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="63"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="43"/>
+	</lastPageFooter>
+	<summary>
+		<band height="488">
+			<pieChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="80" width="555" height="190" uuid="d180c91a-b0c8-48b4-ac05-4c383663875c"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{PAIS}]]></keyExpression>
+					<valueExpression><![CDATA[$F{CANTIDAD}]]></valueExpression>
+					<labelExpression><![CDATA[$F{LISTA_CREADORES}]]></labelExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<staticText>
+				<reportElement x="80" y="40" width="400" height="30" uuid="4e7acd59-c290-4c67-ade8-4609fdcbe65c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Comic Sans MS" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CREADORES POR PAISES]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="-20" y="300" width="555" height="60" uuid="632e8b98-552e-4b8c-ac0e-1e8fb7b81977"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["subinforme.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="2" y="0" width="551" height="30" uuid="18b01c12-e85d-4da9-a2e1-6404c4fde410"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APARTADO 3.- Añade un grafico al reporte]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

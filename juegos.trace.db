@@ -1,0 +1,614 @@
+2024-01-16 01:06:55.951706Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La columna "PAIS" debe estar incluida en la lista de GROUP BY
+Column "PAIS" must be in the GROUP BY list; SQL statement:
+SELECT Pais, Creador, COUNT(*) as TotalCreadores
+FROM Creador [90016-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:266)
+	at org.h2.command.query.Select.updateAgg(Select.java:539)
+	at org.h2.command.query.Select.gatherGroup(Select.java:522)
+	at org.h2.command.query.Select.queryGroup(Select.java:488)
+	at org.h2.command.query.Select.queryWithoutCache(Select.java:828)
+	at org.h2.command.query.Query.queryWithoutCacheLazyCheck(Query.java:197)
+	at org.h2.command.query.Query.query(Query.java:520)
+	at org.h2.command.query.Query.query(Query.java:483)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:252)
+	at org.h2.command.Command.executeQuery(Command.java:192)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:131)
+	at net.sf.jasperreports.engine.query.JRJdbcQueryExecuter.createDatasource(JRJdbcQueryExecuter.java:317)
+	at com.jaspersoft.studio.data.jdbc.JDBCFieldsProvider.getFields(JDBCFieldsProvider.java:79)
+	at com.jaspersoft.studio.data.jdbc.JDBCDataAdapterDescriptor.getFields(JDBCDataAdapterDescriptor.java:69)
+	at com.jaspersoft.studio.data.ui.SimpleQueryWizardDataEditorComposite.readFields(SimpleQueryWizardDataEditorComposite.java:239)
+	at com.jaspersoft.studio.wizards.datasource.StaticWizardDataSourcePage.run(StaticWizardDataSourcePage.java:365)
+	at com.jaspersoft.studio.wizards.JSSWizardRunnablePage$1.run(JSSWizardRunnablePage.java:67)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+2024-01-16 01:08:34.270262Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La columna "CREADOR" debe estar incluida en la lista de GROUP BY
+Column "CREADOR" must be in the GROUP BY list; SQL statement:
+SELECT Pais, Creador, COUNT(*) as TotalCreadores
+FROM Creador
+GROUP BY Pais [90016-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:266)
+	at org.h2.command.query.Select.updateAgg(Select.java:539)
+	at org.h2.command.query.Select.gatherGroup(Select.java:522)
+	at org.h2.command.query.Select.queryGroup(Select.java:488)
+	at org.h2.command.query.Select.queryWithoutCache(Select.java:828)
+	at org.h2.command.query.Query.queryWithoutCacheLazyCheck(Query.java:197)
+	at org.h2.command.query.Query.query(Query.java:520)
+	at org.h2.command.query.Query.query(Query.java:483)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:252)
+	at org.h2.command.Command.executeQuery(Command.java:192)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:131)
+	at net.sf.jasperreports.engine.query.JRJdbcQueryExecuter.createDatasource(JRJdbcQueryExecuter.java:317)
+	at com.jaspersoft.studio.data.jdbc.JDBCFieldsProvider.getFields(JDBCFieldsProvider.java:79)
+	at com.jaspersoft.studio.data.jdbc.JDBCDataAdapterDescriptor.getFields(JDBCDataAdapterDescriptor.java:69)
+	at com.jaspersoft.studio.data.ui.SimpleQueryWizardDataEditorComposite.readFields(SimpleQueryWizardDataEditorComposite.java:239)
+	at com.jaspersoft.studio.wizards.datasource.StaticWizardDataSourcePage.run(StaticWizardDataSourcePage.java:365)
+	at com.jaspersoft.studio.wizards.JSSWizardRunnablePage$1.run(JSSWizardRunnablePage.java:67)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+2024-01-16 01:14:18.229103Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT pais, creadores COUNT [*](*) as TOTALCRADORES\000d\000afrom Creador\000d\000agroup by pais"
+Syntax error in SQL statement "SELECT pais, creadores COUNT [*](*) as TOTALCRADORES\000d\000afrom Creador\000d\000agroup by pais"; SQL statement:
+SELECT pais, creadores COUNT (*) as TOTALCRADORES
+from Creador
+group by pais [42000-224]
+2024-01-16 01:14:56.843880Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT pais, creadores COUNT [*](*) as TOTALCRADORES\000d\000afrom Creador\000d\000agroup by pais;"
+Syntax error in SQL statement "SELECT pais, creadores COUNT [*](*) as TOTALCRADORES\000d\000afrom Creador\000d\000agroup by pais;"; SQL statement:
+SELECT pais, creadores COUNT (*) as TOTALCRADORES
+from Creador
+group by pais; [42000-224]
+2024-01-16 01:15:33.454106Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT pais, creador COUNT [*](*) as TOTALCRADORES\000d\000afrom Creador\000d\000agroup by pais;"
+Syntax error in SQL statement "SELECT pais, creador COUNT [*](*) as TOTALCRADORES\000d\000afrom Creador\000d\000agroup by pais;"; SQL statement:
+SELECT pais, creador COUNT (*) as TOTALCRADORES
+from Creador
+group by pais; [42000-224]
+2024-01-16 01:16:29.618680Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La columna "CREADOR" debe estar incluida en la lista de GROUP BY
+Column "CREADOR" must be in the GROUP BY list; SQL statement:
+SELECT pais, creador, COUNT (*) as TOTALCRADORES from Creador
+group by pais [90016-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:266)
+	at org.h2.command.query.Select.updateAgg(Select.java:539)
+	at org.h2.command.query.Select.gatherGroup(Select.java:522)
+	at org.h2.command.query.Select.queryGroup(Select.java:488)
+	at org.h2.command.query.Select.queryWithoutCache(Select.java:828)
+	at org.h2.command.query.Query.queryWithoutCacheLazyCheck(Query.java:197)
+	at org.h2.command.query.Query.query(Query.java:520)
+	at org.h2.command.query.Query.query(Query.java:483)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:252)
+	at org.h2.command.Command.executeQuery(Command.java:192)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:131)
+	at net.sf.jasperreports.engine.query.JRJdbcQueryExecuter.createDatasource(JRJdbcQueryExecuter.java:317)
+	at com.jaspersoft.studio.data.jdbc.JDBCFieldsProvider.getFields(JDBCFieldsProvider.java:79)
+	at com.jaspersoft.studio.data.jdbc.JDBCDataAdapterDescriptor.getFields(JDBCDataAdapterDescriptor.java:69)
+	at com.jaspersoft.studio.data.ui.SimpleQueryWizardDataEditorComposite.readFields(SimpleQueryWizardDataEditorComposite.java:239)
+	at com.jaspersoft.studio.wizards.datasource.StaticWizardDataSourcePage.run(StaticWizardDataSourcePage.java:365)
+	at com.jaspersoft.studio.wizards.JSSWizardRunnablePage$1.run(JSSWizardRunnablePage.java:67)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+2024-01-16 01:20:27.374004Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La columna "CREADOR" debe estar incluida en la lista de GROUP BY
+Column "CREADOR" must be in the GROUP BY list; SQL statement:
+SELECT CREADOR, PAIS, COUNT (PAIS) AS TOTAL_CREADORES
+FROM CREADOR
+GROUP BY PAIS [90016-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:266)
+	at org.h2.command.query.Select.updateAgg(Select.java:539)
+	at org.h2.command.query.Select.gatherGroup(Select.java:522)
+	at org.h2.command.query.Select.queryGroup(Select.java:488)
+	at org.h2.command.query.Select.queryWithoutCache(Select.java:828)
+	at org.h2.command.query.Query.queryWithoutCacheLazyCheck(Query.java:197)
+	at org.h2.command.query.Query.query(Query.java:520)
+	at org.h2.command.query.Query.query(Query.java:483)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:252)
+	at org.h2.command.Command.executeQuery(Command.java:192)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:131)
+	at net.sf.jasperreports.engine.query.JRJdbcQueryExecuter.createDatasource(JRJdbcQueryExecuter.java:317)
+	at com.jaspersoft.studio.data.jdbc.JDBCFieldsProvider.getFields(JDBCFieldsProvider.java:79)
+	at com.jaspersoft.studio.data.jdbc.JDBCDataAdapterDescriptor.getFields(JDBCDataAdapterDescriptor.java:69)
+	at com.jaspersoft.studio.data.ui.SimpleQueryWizardDataEditorComposite.readFields(SimpleQueryWizardDataEditorComposite.java:239)
+	at com.jaspersoft.studio.wizards.datasource.StaticWizardDataSourcePage.run(StaticWizardDataSourcePage.java:365)
+	at com.jaspersoft.studio.wizards.JSSWizardRunnablePage$1.run(JSSWizardRunnablePage.java:67)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+2024-01-16 01:57:37.574858Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La columna "PUBLIC.JUEGOS.IDJ" debe estar incluida en la lista de GROUP BY
+Column "PUBLIC.JUEGOS.IDJ" must be in the GROUP BY list; SQL statement:
+select * from JUEGOS group by id_creador [90016-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:266)
+	at org.h2.command.query.Select.updateAgg(Select.java:539)
+	at org.h2.command.query.Select$LazyResultGroupSorted.fetchNextRow(Select.java:1930)
+	at org.h2.result.LazyResult.hasNext(LazyResult.java:78)
+	at org.h2.result.FetchedResult.next(FetchedResult.java:34)
+	at org.h2.command.query.Select.queryGroupSorted(Select.java:320)
+	at org.h2.command.query.Select.queryWithoutCache(Select.java:826)
+	at org.h2.command.query.Query.queryWithoutCacheLazyCheck(Query.java:197)
+	at org.h2.command.query.Query.query(Query.java:520)
+	at org.h2.command.query.Query.query(Query.java:483)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:252)
+	at org.h2.command.Command.executeQuery(Command.java:192)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:131)
+	at net.sf.jasperreports.engine.query.JRJdbcQueryExecuter.createDatasource(JRJdbcQueryExecuter.java:317)
+	at com.jaspersoft.studio.data.jdbc.JDBCFieldsProvider.getFields(JDBCFieldsProvider.java:79)
+	at com.jaspersoft.studio.data.jdbc.JDBCDataAdapterDescriptor.getFields(JDBCDataAdapterDescriptor.java:69)
+	at com.jaspersoft.studio.data.ui.SimpleQueryWizardDataEditorComposite.readFields(SimpleQueryWizardDataEditorComposite.java:239)
+	at com.jaspersoft.studio.wizards.datasource.StaticWizardDataSourcePage.run(StaticWizardDataSourcePage.java:365)
+	at com.jaspersoft.studio.wizards.JSSWizardRunnablePage$1.run(JSSWizardRunnablePage.java:67)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+2024-01-16 01:57:54.516342Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La columna "PUBLIC.JUEGOS.IDJ" debe estar incluida en la lista de GROUP BY
+Column "PUBLIC.JUEGOS.IDJ" must be in the GROUP BY list; SQL statement:
+select * from JUEGOS group by id_creador [90016-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:266)
+	at org.h2.command.query.Select.updateAgg(Select.java:539)
+	at org.h2.command.query.Select$LazyResultGroupSorted.fetchNextRow(Select.java:1930)
+	at org.h2.result.LazyResult.hasNext(LazyResult.java:78)
+	at org.h2.result.FetchedResult.next(FetchedResult.java:34)
+	at org.h2.command.query.Select.queryGroupSorted(Select.java:320)
+	at org.h2.command.query.Select.queryWithoutCache(Select.java:826)
+	at org.h2.command.query.Query.queryWithoutCacheLazyCheck(Query.java:197)
+	at org.h2.command.query.Query.query(Query.java:520)
+	at org.h2.command.query.Query.query(Query.java:483)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:252)
+	at org.h2.command.Command.executeQuery(Command.java:192)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:131)
+	at net.sf.jasperreports.engine.query.JRJdbcQueryExecuter.createDatasource(JRJdbcQueryExecuter.java:317)
+	at com.jaspersoft.studio.data.jdbc.JDBCFieldsProvider.getFields(JDBCFieldsProvider.java:79)
+	at com.jaspersoft.studio.data.jdbc.JDBCDataAdapterDescriptor.getFields(JDBCDataAdapterDescriptor.java:69)
+	at com.jaspersoft.studio.data.ui.SimpleQueryWizardDataEditorComposite.readFields(SimpleQueryWizardDataEditorComposite.java:239)
+	at com.jaspersoft.studio.wizards.datasource.StaticWizardDataSourcePage.run(StaticWizardDataSourcePage.java:365)
+	at com.jaspersoft.studio.wizards.JSSWizardRunnablePage$1.run(JSSWizardRunnablePage.java:67)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+2024-01-16 02:03:19.291372Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La columna "JUEGOS.JUEGO" debe estar incluida en la lista de GROUP BY
+Column "JUEGOS.JUEGO" must be in the GROUP BY list; SQL statement:
+SELECT "JUEGOS"."ID_CREADOR",
+	"JUEGOS"."JUEGO"
+FROM "JUEGOS",
+	"CREADOR"
+GROUP BY "JUEGOS"."ID_CREADOR" [90016-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:266)
+	at org.h2.command.query.Select.updateAgg(Select.java:539)
+	at org.h2.command.query.Select$LazyResultGroupSorted.fetchNextRow(Select.java:1930)
+	at org.h2.result.LazyResult.hasNext(LazyResult.java:78)
+	at org.h2.result.FetchedResult.next(FetchedResult.java:34)
+	at org.h2.command.query.Select.queryGroupSorted(Select.java:320)
+	at org.h2.command.query.Select.queryWithoutCache(Select.java:826)
+	at org.h2.command.query.Query.queryWithoutCacheLazyCheck(Query.java:197)
+	at org.h2.command.query.Query.query(Query.java:520)
+	at org.h2.command.query.Query.query(Query.java:483)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:252)
+	at org.h2.command.Command.executeQuery(Command.java:192)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:131)
+	at net.sf.jasperreports.engine.query.JRJdbcQueryExecuter.createDatasource(JRJdbcQueryExecuter.java:317)
+	at com.jaspersoft.studio.data.jdbc.JDBCFieldsProvider.getFields(JDBCFieldsProvider.java:79)
+	at com.jaspersoft.studio.data.jdbc.JDBCDataAdapterDescriptor.getFields(JDBCDataAdapterDescriptor.java:69)
+	at com.jaspersoft.studio.data.ui.SimpleQueryWizardDataEditorComposite.readFields(SimpleQueryWizardDataEditorComposite.java:239)
+	at com.jaspersoft.studio.wizards.datasource.StaticWizardDataSourcePage.run(StaticWizardDataSourcePage.java:365)
+	at com.jaspersoft.studio.wizards.JSSWizardRunnablePage$1.run(JSSWizardRunnablePage.java:67)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+2024-01-16 02:33:48.419570Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "CREADOR.IDC"
+Data conversion error converting "CREADOR.IDC"; SQL statement:
+SELECT "JUEGOS"."JUEGO",
+	"JUEGOS"."ID_CREADOR"
+FROM "CREADOR",
+	"JUEGOS"
+WHERE 
+	 "JUEGOS"."ID_CREADOR" = 'CREADOR.IDC' [22018-224]
+2024-01-16 02:36:36.626027Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "Juegos" not found (candidates are: "JUEGOS"); SQL statement:
+SELECT "Juegos"."Juego",
+	"Creador"."Creador",
+	"Juegos"."FechaCreacion"
+FROM "Juegos"
+	INNER JOIN "Creador" ON 
+	 "Juegos"."id_Creador" = "Creador"."Idc"; [42103-224]
+2024-01-16 02:37:02.652589Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "Juegos" not found (candidates are: "JUEGOS"); SQL statement:
+SELECT "Juegos"."Juego",
+	"Creador"."Creador",
+	"Juegos"."FechaCreacion"
+FROM "Juegos"
+INNER JOIN "Creador" ON 
+ "Juegos"."id_Creador" = "Creador"."Idc"; [42103-224]
+2024-01-16 02:47:03.523398Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La columna "CREADOR.CREADOR" debe estar incluida en la lista de GROUP BY
+Column "CREADOR.CREADOR" must be in the GROUP BY list; SQL statement:
+SELECT "CREADOR"."CREADOR",
+                  GROUP_CONCAT(JUEGOS.JUEGO) AS JUEGO
+        FROM "CREADOR"
+             INNER JOIN "JUEGOS" ON "JUEGOS"."ID_CREADOR" = "CREADOR"."IDC" [90016-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:266)
+	at org.h2.command.query.Select.updateAgg(Select.java:539)
+	at org.h2.command.query.Select.gatherGroup(Select.java:522)
+	at org.h2.command.query.Select.queryGroup(Select.java:488)
+	at org.h2.command.query.Select.queryWithoutCache(Select.java:828)
+	at org.h2.command.query.Query.queryWithoutCacheLazyCheck(Query.java:197)
+	at org.h2.command.query.Query.query(Query.java:520)
+	at org.h2.command.query.Query.query(Query.java:483)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:252)
+	at org.h2.command.Command.executeQuery(Command.java:192)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:131)
+	at net.sf.jasperreports.engine.query.JRJdbcQueryExecuter.createDatasource(JRJdbcQueryExecuter.java:317)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.createQueryDatasource(JRFillDataset.java:1286)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.initDatasource(JRFillDataset.java:736)
+	at net.sf.jasperreports.engine.fill.BaseReportFiller.setParameters(BaseReportFiller.java:464)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:591)
+	at net.sf.jasperreports.engine.fill.BaseFillHandle$ReportFill.run(BaseFillHandle.java:135)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2024-01-16 02:50:57.566921Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT ""CREADOR"".""CREADOR"", GROUP_CONCAT(""JUEGOS"".""JUEGO""[*], ', ') AS ""JUEGO""\000a\0009\0009\0009FROM ""CREADOR""\000a\0009\0009\0009INNER JOIN ""JUEGOS"" ON ""JUEGOS"".""ID_CREADOR"" = ""CREADOR"".""IDC"" GROUP BY ""CREADOR"".""CREADOR"";"; se esperaba "(, ., [, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ORDER BY, SEPARATOR, )"
+Syntax error in SQL statement "SELECT ""CREADOR"".""CREADOR"", GROUP_CONCAT(""JUEGOS"".""JUEGO""[*], ', ') AS ""JUEGO""\000a\0009\0009\0009FROM ""CREADOR""\000a\0009\0009\0009INNER JOIN ""JUEGOS"" ON ""JUEGOS"".""ID_CREADOR"" = ""CREADOR"".""IDC"" GROUP BY ""CREADOR"".""CREADOR"";"; expected "(, ., [, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ORDER BY, SEPARATOR, )"; SQL statement:
+SELECT "CREADOR"."CREADOR", GROUP_CONCAT("JUEGOS"."JUEGO", ', ') AS "JUEGO"
+			FROM "CREADOR"
+			INNER JOIN "JUEGOS" ON "JUEGOS"."ID_CREADOR" = "CREADOR"."IDC" GROUP BY "CREADOR"."CREADOR"; [42001-224]
+2024-01-16 02:51:08.265965Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT ""CREADOR"".""CREADOR"", GROUP_CONCAT(""JUEGOS"".""JUEGO""[*], ', ') AS ""JUEGOS""\000aFROM ""CREADOR""\000aINNER JOIN ""JUEGOS"" ON ""JUEGOS"".""ID_CREADOR"" = ""CREADOR"".""IDC""\000aGROUP BY ""CREADOR"".""CREADOR"";"; se esperaba "(, ., [, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ORDER BY, SEPARATOR, )"
+Syntax error in SQL statement "SELECT ""CREADOR"".""CREADOR"", GROUP_CONCAT(""JUEGOS"".""JUEGO""[*], ', ') AS ""JUEGOS""\000aFROM ""CREADOR""\000aINNER JOIN ""JUEGOS"" ON ""JUEGOS"".""ID_CREADOR"" = ""CREADOR"".""IDC""\000aGROUP BY ""CREADOR"".""CREADOR"";"; expected "(, ., [, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ORDER BY, SEPARATOR, )"; SQL statement:
+SELECT "CREADOR"."CREADOR", GROUP_CONCAT("JUEGOS"."JUEGO", ', ') AS "JUEGOS"
+FROM "CREADOR"
+INNER JOIN "JUEGOS" ON "JUEGOS"."ID_CREADOR" = "CREADOR"."IDC"
+GROUP BY "CREADOR"."CREADOR"; [42001-224]
+2024-01-16 02:53:37.012273Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT ""CREADOR"".""CREADOR"", GROUP_CONCAT(""JUEGOS"".""JUEGO""[*], ', ') AS ""JUEGO""\000aFROM ""CREADOR""\000aINNER JOIN ""JUEGOS"" ON ""JUEGOS"".""ID_CREADOR"" = ""CREADOR"".""IDC""\000aGROUP BY ""CREADOR"".""CREADOR"";"; se esperaba "(, ., [, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ORDER BY, SEPARATOR, )"
+Syntax error in SQL statement "SELECT ""CREADOR"".""CREADOR"", GROUP_CONCAT(""JUEGOS"".""JUEGO""[*], ', ') AS ""JUEGO""\000aFROM ""CREADOR""\000aINNER JOIN ""JUEGOS"" ON ""JUEGOS"".""ID_CREADOR"" = ""CREADOR"".""IDC""\000aGROUP BY ""CREADOR"".""CREADOR"";"; expected "(, ., [, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ORDER BY, SEPARATOR, )"; SQL statement:
+SELECT "CREADOR"."CREADOR", GROUP_CONCAT("JUEGOS"."JUEGO", ', ') AS "JUEGO"
+FROM "CREADOR"
+INNER JOIN "JUEGOS" ON "JUEGOS"."ID_CREADOR" = "CREADOR"."IDC"
+GROUP BY "CREADOR"."CREADOR"; [42001-224]
+2024-01-16 02:53:58.564646Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT ""CREADOR"".""CREADOR"", GROUP_CONCAT(""JUEGOS"".""JUEGO""[*], ', ') AS ""JUEGO""\000aFROM ""CREADOR""\000aINNER JOIN ""JUEGOS"" ON ""JUEGOS"".""ID_CREADOR"" = ""CREADOR"".""IDC""\000aGROUP BY ""CREADOR"".""CREADOR"";"; se esperaba "(, ., [, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ORDER BY, SEPARATOR, )"
+Syntax error in SQL statement "SELECT ""CREADOR"".""CREADOR"", GROUP_CONCAT(""JUEGOS"".""JUEGO""[*], ', ') AS ""JUEGO""\000aFROM ""CREADOR""\000aINNER JOIN ""JUEGOS"" ON ""JUEGOS"".""ID_CREADOR"" = ""CREADOR"".""IDC""\000aGROUP BY ""CREADOR"".""CREADOR"";"; expected "(, ., [, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ORDER BY, SEPARATOR, )"; SQL statement:
+SELECT "CREADOR"."CREADOR", GROUP_CONCAT("JUEGOS"."JUEGO", ', ') AS "JUEGO"
+FROM "CREADOR"
+INNER JOIN "JUEGOS" ON "JUEGOS"."ID_CREADOR" = "CREADOR"."IDC"
+GROUP BY "CREADOR"."CREADOR"; [42001-224]
+2024-01-16 02:54:01.427824Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT ""CREADOR"".""CREADOR"", GROUP_CONCAT(""JUEGOS"".""JUEGO""[*], ', ') AS ""JUEGO""\000aFROM ""CREADOR""\000aINNER JOIN ""JUEGOS"" ON ""JUEGOS"".""ID_CREADOR"" = ""CREADOR"".""IDC""\000aGROUP BY ""CREADOR"".""CREADOR"";"; se esperaba "(, ., [, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ORDER BY, SEPARATOR, )"
+Syntax error in SQL statement "SELECT ""CREADOR"".""CREADOR"", GROUP_CONCAT(""JUEGOS"".""JUEGO""[*], ', ') AS ""JUEGO""\000aFROM ""CREADOR""\000aINNER JOIN ""JUEGOS"" ON ""JUEGOS"".""ID_CREADOR"" = ""CREADOR"".""IDC""\000aGROUP BY ""CREADOR"".""CREADOR"";"; expected "(, ., [, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ORDER BY, SEPARATOR, )"; SQL statement:
+SELECT "CREADOR"."CREADOR", GROUP_CONCAT("JUEGOS"."JUEGO", ', ') AS "JUEGO"
+FROM "CREADOR"
+INNER JOIN "JUEGOS" ON "JUEGOS"."ID_CREADOR" = "CREADOR"."IDC"
+GROUP BY "CREADOR"."CREADOR"; [42001-224]
+2024-01-16 03:59:43.729201Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "PAÍS" no encontrada
+Column "PAÍS" not found; SQL statement:
+select País, Count(Creador) as Creadores ,AVG(Puntuacion) as PuntuacionMedia from Creador group by País; [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1170)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:316)
+	at net.sf.jasperreports.engine.query.JRJdbcQueryExecuter.createStatement(JRJdbcQueryExecuter.java:404)
+	at net.sf.jasperreports.engine.query.JRJdbcQueryExecuter.createDatasource(JRJdbcQueryExecuter.java:299)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.createQueryDatasource(JRFillDataset.java:1286)
+	at net.sf.jasperreports.engine.fill.JRFillDataset.initDatasource(JRFillDataset.java:736)
+	at net.sf.jasperreports.engine.fill.BaseReportFiller.setParameters(BaseReportFiller.java:464)
+	at net.sf.jasperreports.engine.fill.JRBaseFiller.fill(JRBaseFiller.java:591)
+	at net.sf.jasperreports.engine.fill.BaseFillHandle$ReportFill.run(BaseFillHandle.java:135)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2024-01-16 10:56:29.057754Z database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at com.francisco.connection.H2Connection.newInstance(H2Connection.java:16)
+	at com.francisco.connection.Main.main(Main.java:16)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 13 more
+2024-01-16 11:25:07.455123Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "update creador [*]where IDC = 1 set pais = Japón"; se esperaba "., AS, SET"
+Syntax error in SQL statement "update creador [*]where IDC = 1 set pais = Japón"; expected "., AS, SET"; SQL statement:
+update creador where IDC = 1 set pais = Japón [42001-224]
+2024-01-16 11:26:40.260755Z database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at com.francisco.connection.H2Connection.newInstance(H2Connection.java:16)
+	at com.francisco.connection.Main.main(Main.java:16)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 13 more
+2024-01-16 11:33:06.929377Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "PAIS" no encontrada
+Column "PAIS" not found; SQL statement:
+SELECT * FROM Juegos WHERE pais = ? [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:147)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1177)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:316)
+	at interfaces.PantallaInicio.generarInforme(PantallaInicio.java:137)
+	at interfaces.PantallaInicio.imprimirNuevoInformeButtonActionPerformed(PantallaInicio.java:105)
+	at interfaces.PantallaInicio$1.actionPerformed(PantallaInicio.java:51)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1972)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2314)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:407)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6621)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3398)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6386)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2266)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:4996)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2324)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4828)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4948)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4575)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4516)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2310)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2780)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4828)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:775)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:98)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:747)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:744)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2024-01-16 11:33:24.333079Z database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:811)
+	at org.h2.server.web.WebApp.login(WebApp.java:1039)
+	at org.h2.server.web.WebApp.process(WebApp.java:227)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at org.h2.server.web.WebThread.process(WebThread.java:154)
+	at org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 22 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 16 more
+2024-01-16 11:35:41.257984Z database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at com.francisco.connection.H2Connection.newInstance(H2Connection.java:16)
+	at com.francisco.connection.Main.main(Main.java:16)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 13 more
+2024-01-16 11:40:47.491567Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-01-16 11:40:50.314548Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-01-16 11:49:36.455969Z database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at com.francisco.connection.H2Connection.newInstance(H2Connection.java:16)
+	at com.francisco.connection.Main.main(Main.java:16)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 13 more
+2024-01-16 11:54:59.412845Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM juegos[*]}"
+Syntax error in SQL statement "SELECT * FROM juegos[*]}"; SQL statement:
+SELECT * FROM juegos} [42000-224]
+2024-01-16 11:59:41.971361Z database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at com.francisco.connection.H2Connection.newInstance(H2Connection.java:16)
+	at com.francisco.connection.Main.main(Main.java:16)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/OTOKODA/Documents/NetBeansProjects/GeneracionDeInformes/juegos.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 13 more
+2024-01-16 12:07:56.877187Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]

@@ -11,6 +11,9 @@
 	<variable name="CANTIDAD1" class="java.lang.Long" resetType="Page" calculation="Average">
 		<variableExpression><![CDATA[$F{CANTIDAD}]]></variableExpression>
 	</variable>
+	<variable name="CANTIDAD2" class="java.lang.Long" resetType="Page" calculation="Average">
+		<variableExpression><![CDATA[$F{CANTIDAD}]]></variableExpression>
+	</variable>
 	<title>
 		<band height="122">
 			<staticText>
@@ -83,11 +86,30 @@
 			</textField>
 		</band>
 	</detail>
-	<pageFooter>
-		<band height="63"/>
-	</pageFooter>
 	<lastPageFooter>
-		<band height="43"/>
+		<band height="141">
+			<staticText>
+				<reportElement x="80" y="70" width="230" height="30" uuid="220674a4-e933-424c-847a-474edeac3ee6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Media de creadores por país:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="310" y="70" width="100" height="30" uuid="b9e59210-e93c-41fe-9f1b-004a0495c311"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{CANTIDAD2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="20" width="551" height="30" uuid="c6afd0bb-3b45-4d27-8d14-ff2573d6e123"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APARTADO 4.- Promedio de uno de los campos]]></text>
+			</staticText>
+		</band>
 	</lastPageFooter>
 	<summary>
 		<band height="488">
